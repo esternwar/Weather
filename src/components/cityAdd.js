@@ -32,8 +32,16 @@ class AddCity extends Component {
             .catch((error)=>{
                 alert("Ошибка запроса!");
             })
+
+ 
     }
 
+    move(columnId, city){
+        //alert(columnId);
+        this.setState(
+            {cities: 0}
+        );
+    }
 
 
 
@@ -43,8 +51,9 @@ class AddCity extends Component {
             <div>
                 <input type="text" value={this.state.setCityName} onChange={this.setCityName}/> <input type="submit" value="Выбрать" onClick={() => this.selectCity(this.state)}/>
                 <br/>
-
-                <CityList city={this.state.cities}/>
+                <Context.Provider value={this.state.cities}>
+                    <CityList />
+                </Context.Provider>
             </div>
         )
     }
@@ -57,3 +66,11 @@ export default AddCity;
     <CityList />
 </Context.Provider>
 */
+
+
+/*
+<CityList city={this.state.cities} del={this.move}/>
+                <br/>
+                <br/>
+                
+                */
