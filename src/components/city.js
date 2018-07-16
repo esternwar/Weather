@@ -20,7 +20,7 @@ render(){
     return(
     <div>
     <Context.Consumer>
-        {context => (<h1>{context[this.props.id].name} {context[this.props.id].temperature}&#176;C <h2><input class = "delbtm" type="submit" value="del" onClick={this.Visible}/></h2></h1>)}
+        {context => (<h1>{context[this.props.id].name} {context[this.props.id].temperature}&#176;C <input className = "delbtm" type="submit" value="del" onClick={this.Visible}/></h1>)}
     </Context.Consumer>
     </div>
         )}
